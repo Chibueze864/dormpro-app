@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tourist - Travel Agency HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+  <script src="customNavbar.js" type="text/javascript" defer></script>
+  <script src="customFooter.js" type="text/javascript" defer></script>
+  <script src="firebase.js"  type="text/javascript" defer></script>
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+  <!-- Navbar Start -->
+    <navbar-component></navbar-component>
+  <!-- Navbar  Hero End -->
+
+
+    <!-- Process Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Process</h6>
+                <h1 class="mb-5">1 Easy Step</h1>
+            </div>
+            <div class="row gy-5 gx-4 justify-content-center">
+                <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="position-relative border border-primary pt-5 pb-4 px-4">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                            <i class="fa fa-bed fa-3x text-white"></i>
+                        </div>
+                        <h5 class="mt-4">Join A Room</h5>
+                        <hr class="w-25 mx-auto bg-primary mb-1">
+                        <hr class="w-50 mx-auto bg-primary mt-0">
+                        <p class="mb-0">Join A Room Via An Invite Code From Your Friends</p>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <!-- Process Start -->
+
+
+    <!-- Booking Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="booking p-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-md-6 text-white">
+                        <h6 class="text-white text-uppercase">Booking</h6>
+                        <h1 class="text-white mb-4">Online Booking</h1>
+                        <p class="mb-4">Book a room via an invite code</p>
+                  
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="text-white mb-4">Book A Room</h1>
+                        <form>
+                            <div class="row g-3">
+                              							  <div class="col-md-12">
+                              <div class="form-floating">
+                                      <select class="form-select bg-white-50 text-dark" id="meal">
+                                          <option value="meal-yes">Yes</option>
+                                        <option value="meal-no">No</option>
+
+                                    
+
+                                      </select>
+                                      <label for="meal">Meal Included?</label>
+                                  </div>
+
+                              </div>
+
+                               
+
+							  
+                                <div class="col-md-12">
+                                    <div class="form-floating date" id="date3" data-target-input="nearest">
+                                        <input type="text" class="form-control bg-white-50 text-dark " id="code" placeholder="Room Code (Optional)" data-target="#code" data-toggle="code" />
+                                        <label for="code">Room Code </label>
+                                    </div>
+                                </div>
+                              
+                                <div class="col-12">
+                                    <a class="btn btn-outline-light w-100 py-3"  id="reserve" >Book Now</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Booking Start -->
+        
+
+  <!-- Footer Start -->
+  <footer-component></footer-component>
+  <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+	<script type="module">
+    //Update the below URL with the appropriate version if necessary.
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
+    import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut,
+      updateProfile 
+    //Update the below URL with the appropriate version if necessary.
+    } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
+	   import {
+      getFirestore,
+        setDoc,
+        doc,
+        addDoc,
+		getDocs,
+		query,
+		collection,
+		where,
+		orderBy,
+		updateDoc
+      } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
+    // INSERT YOUR FIREBASE CONFIG OBJECT HERE
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyAnAt57T3pVCU-Rw1GRw4tivhvBcC_NmzM",
+
+      authDomain: "dormpro-3f0e3.firebaseapp.com",
+
+      databaseURL: "https://dormpro-3f0e3-default-rtdb.firebaseio.com",
+
+      projectId: "dormpro-3f0e3",
+
+      storageBucket: "dormpro-3f0e3.appspot.com",
+
+      messagingSenderId: "688445848812",
+
+      appId: "1:688445848812:web:9fba956b87f59bf756f9c9",
+
+      measurementId: "G-119MDWZXMR"
+
+    };
+
+      const reserveButton = document.querySelector("#reserve");
+
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+	const db = getFirestore(app);
+	
+	
+	
+let inputValues = {};
+
+const collectionRef = collection(db, "hostel_reservation");
+
+	// Declare global variables to store input and select values
+let selectedValues = {};
+
+// Function to get selected value from a select element by element id
+function getSelectedValue(elementId) {
+  var element = document.getElementById(elementId);
+  selectedValues[elementId] = element.value; // Update global selectedValues object
+  return element.value;
+}
+
+// Function to update selected value from a select element
+function updateSelectedValue(element) {
+  selectedValues[element.id] = element.value; // Update global selectedValues object
+  return element.value;
+}
+
+
+// Run getSelectedValue and getInputValue on page load
+document.addEventListener('DOMContentLoaded', function() {
+  // Get selected value of select elements
+  document.querySelectorAll('select').forEach(select => {
+    selectedValues[select.id] = select.value; // Update global selectedValues object
+  });
+});
+
+// Add event listeners to all select elements to update selected value on change
+document.querySelectorAll('select').forEach(select => {
+  select.addEventListener('change', function() {
+    updateSelectedValue(select);
+    console.log(`Selected values:`, selectedValues);
+  });
+});
+// Function to get input value from an input element by element id
+function getInputValue(elementId) {
+  var element = document.getElementById(elementId);
+  inputValues[elementId] = element.value; // Update global inputValues object
+  return element.value;
+}
+
+
+// Function to update input value from an input element
+function updateInputValue(element) {
+  inputValues[element.id] = element.value; // Update global inputValues object
+  return element.value;
+}
+
+// Run getSelectedValue and getInputValue on page load
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Get input value of input elements
+  document.querySelectorAll('input').forEach(input => {
+    inputValues[input.id] = input.value; // Update global inputValues object
+  });
+});
+
+// Add event listeners to all input elements to update input value on input
+document.querySelectorAll('input').forEach(input => {
+  input.addEventListener('input', function() {
+    updateInputValue(input);
+    console.log(`Input values:`, inputValues);
+  });
+});
+
+
+const findObjectByCode = (objects, inputValues) => objects.find(obj => obj?.code === inputValues?.code);
+
+
+async function fetchReservation(collectionRef) {
+		let keys = []
+
+    try {
+        const querySnapshot = await getDocs(collectionRef);
+
+        querySnapshot.forEach((doc) => {
+            keys.push(doc.id);
+        });
+		return keys;
+    } catch (error) {
+        console.error("Error getting documents: ", error);
+    }
+
+    console.log("Keys outside fetchData:", keys);
+}
+
+
+async function fetchReservationByEmails(collectionRef) {
+		let data = []
+let keys = []
+let values = []
+    try {
+        const querySnapshot = await getDocs(collectionRef);
+
+        querySnapshot.forEach((doc) => {
+		  let value = doc.data()
+		  
+		  value.id = doc.id
+            data.push(value);
+        });
+		
+		
+	
+	
+		return data;
+    } catch (error) {
+        console.error("Error getting documents: ", error);
+    }
+
+    console.log("Keys outside fetchData:", keys);
+}
+
+async function checkCode(code) {
+	if(code.trim() == ""){
+		alert("Enter a code")
+	}else{
+  // Fetch reservations
+  const reservations = await fetchReservationByEmails(collectionRef);
+
+  // Filter reservations
+const filteredReservations = reservations.find(obj => obj?.code === code) || [];
+  return filteredReservations;
+  }
+}
+
+const bookReservation = async () => {
+		let codes = await checkCode(inputValues.code)
+		if(codes.length == 0){
+			alert("That code is not assigned to a room")
+		}else{
+				const currentDate = new Date();
+
+		const year = currentDate.getFullYear();
+const month = currentDate.getMonth() + 1; // Month is zero-indexed, so we add 1
+const day = currentDate.getDate();
+
+		const formattedDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
+		       let email = auth.currentUser?.email;
+
+				
+console.log(inputValues.code);
+            const reserveID = email + "-" + codes.hostel+ "-" + formattedDate;
+		console.log(reserveID)
+		
+		let keys = await fetchReservation(collectionRef);
+	const filteredKeys = keys.filter(key => key.includes(email));
+	
+		const isRoomFull = () => {
+  return parseInt(codes.room_capacity) === parseInt(codes.no_members);
+};
+console.log(isRoomFull());
+if(filteredKeys.length > 0){
+		alert("You have already made a reservation")
+
+}
+else if(!isRoomFull()){
+		
+		await setDoc(doc(db, "hostel_reservation", reserveID), {
+room_capacity: codes.room_capacity,
+              hostel: codes.hostel,
+              floor: codes.floor,
+              meal_plan: selectedValues.meal === "meal-yes" ? true : false,
+			  room: codes.room,
+              user_id:email.replace(/\./g, "-dot-"),
+			  approved: "waiting",
+			  code: codes.code,
+			  invite: "yes",
+			  no_members:codes.no_members
+			  
+            });
+			alert("Hostel Request Sent")
+
+		}
+		else{
+		
+			alert("Room is already full");
+		}
+		
+}		
+			
+		
+		
+		}
+
+	 reserveButton.addEventListener("click", bookReservation);
+	 
+	 const checkAuthState = async() => {
+        onAuthStateChanged(auth, user => {
+            if(user) {
+					console.log(user.email);
+        
+            }
+            else {
+              			window.location.href = '/register';
+
+            }
+        })
+    }
+ 
+     checkAuthState();
+
+	
+
+	</script>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

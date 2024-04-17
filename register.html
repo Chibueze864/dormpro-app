@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tourist - Travel Agency HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+  <script src="firebase.js"  ></script>
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+ 
+
+
+
+
+
+    <!-- Login Start -->
+  <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container" >
+      <div class="booking p-5">
+  <div class="row g-5 align-items-center">
+  <div class="col-md-6 text-white">
+      <h6 class="text-white text-uppercase">Register</h6>
+      <h1 class="text-white mb-4">Create Account On DormPro</h1>
+
+  </div>
+  <div class="col-md-6" id="authForm">
+    <div>
+        <div class="row g-3">
+          <div class="col-md-12">
+              <div class="form-floating">
+                  <input type="email" class="form-control bg-white-50 text-dark" id="register-email" placeholder="Email">
+                  <label for="register-email">Email</label>
+              </div>
+          </div>
+          <div class="col-md-12">
+              <div class="form-floating">
+                <input type="text" class="form-control bg-white-50 text-dark" id="register-username" placeholder="Username">
+                  <label for="register-username">Username</label>
+              </div>
+          </div>
+		  <div class="col-md-12">
+              <div class="form-floating">
+                  <select  class="form-control bg-white-50 text-dark" id="register-gender" placeholder="Gender">
+						  <option value="male">Male</option>
+                          <option value="female">Female</option>
+				  </select>
+                  <label for="register-gender">Gender</label>
+              </div>
+          </div>
+
+
+          <div class="col-md-12">
+              <div class="form-floating">
+                  <input type="password" class="form-control bg-white-50 text-dark" id="register-password" placeholder="Password">
+                  <label for="register-password">Password</label>
+              </div>
+          </div>
+
+
+
+            <div class="col-12">
+			  <button class="btn mb-4 btn-outline-light w-100 py-3" id="signInButton">Login</button>
+                <button class="btn mb-4 btn-outline-light w-100 py-3" id="signUpButton">Register</button>
+             
+
+               <p class="text-white mb-4  w-100 py-3" id="signOutButton">Signout</p>
+
+
+            </div>
+
+        </div>
+    </div>
+  </div>
+  </div>
+    </div>
+  </div>
+  </div>
+    <!-- Login End -->
+
+
+ 
+
+  
+
+  <script type="module">
+    //Update the below URL with the appropriate version if necessary.
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
+    import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut,
+      updateProfile,
+	 
+    //Update the below URL with the appropriate version if necessary.
+    } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
+	import {
+		get,
+		getDatabase,
+		ref,
+		set,
+		child
+	} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js"
+
+    // INSERT YOUR FIREBASE CONFIG OBJECT HERE
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyAnAt57T3pVCU-Rw1GRw4tivhvBcC_NmzM",
+
+      authDomain: "dormpro-3f0e3.firebaseapp.com",
+
+      databaseURL: "https://dormpro-3f0e3-default-rtdb.firebaseio.com",
+
+      projectId: "dormpro-3f0e3",
+
+      storageBucket: "dormpro-3f0e3.appspot.com",
+
+      messagingSenderId: "688445848812",
+
+      appId: "1:688445848812:web:9fba956b87f59bf756f9c9",
+
+      measurementId: "G-119MDWZXMR"
+
+    };
+
+
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+	const db = getDatabase(app);
+
+    const userEmail = document.querySelector("#register-email");
+    const userName= document.getElementById("register-username");
+    const userPassword = document.querySelector("#register-password");
+	
+
+	
+    
+    const authForm = document.querySelector("#authForm");
+    
+    const signUpButton = document.querySelector("#signUpButton");
+    const signInButton = document.querySelector("#signInButton");
+    const signOutButton = document.querySelector("#signOutButton");
+
+    
+	const createUser = async()=>{
+	   const signUpEmail = userEmail.value;
+        const signUpPassword = userPassword.value;
+      const displayName = userName.value;
+	  const userGender = document.querySelector("#register-gender");
+	const userGenderOption = userGender.options[userGender.selectedIndex];
+	const userGenderOptionValue = userGenderOption.value;
+try {
+  const userCredential = await createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword);
+  const user = userCredential.user;
+  console.log(user);
+  
+  localStorage.setItem("email", signUpEmail);
+
+  await updateProfile(user, { displayName: displayName, gender: userGenderOptionValue });
+  console.log("Display Name set successfully:", displayName);
+  alert("Your account has been created!");
+  
+  set(ref(db, 'users/' + signUpEmail.replace(/\./g, "-dot-")),{
+  name: displayName,
+  email: signUpEmail,
+  gender: userGenderOptionValue
+}).then(() => {
+}).catch((error) => {
+  console.error('Error storing data:', error);
+});
+  return true;
+} catch (error) {
+  
+    console.error("Unexpected error:", error);
+  
+  return false;
+}
+
+	
+	}
+    const userSignUp = async() => {
+        const signUpEmail = userEmail.value;
+        const signUpPassword = userPassword.value;
+      const displayName = userName.value;
+	  const userGender = document.querySelector("#register-gender");
+	const userGenderOption = userGender.options[userGender.selectedIndex];
+	const userGenderOptionValue = userGenderOption.value;
+	  let alreadyCreated = false; // Initialize the variable
+	  
+
+	
+     if( displayName!== null && signUpEmail !== null && signUpPassword !== null && userGenderOptionValue  !== null ){
+		
+
+		createUser();
+
+      }
+      else{
+        alert("Please enter all fields")
+      }
+    }
+
+    const userSignIn = async() => {
+        const signInEmail = userEmail.value;
+        const signInPassword = userPassword.value;
+      
+        signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+        .then((userCredential) => {
+            localStorage.setItem('userEmail', signInEmail);
+          
+            const user = userCredential.user;
+            alert("You have signed in successfully!");
+			return true;
+          
+
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode + errorMessage);
+			alert("Invalid login credentials")
+			return false;
+        })
+    }
+
+    const checkAuthState = async() => {
+        onAuthStateChanged(auth, user => {
+            if(user) {
+					   const signInEmail = userEmail.value;
+        const signInPassword = userPassword.value;
+				  // Get the last sign-in time
+				  const lastSignInTime = user.metadata.lastSignInTime;
+
+				  // Calculate the difference in milliseconds between the last sign-in time and the current time
+				  const currentTime = Date.now();
+				  const signInTimeDifference = currentTime - new Date(lastSignInTime).getTime();
+
+				  // Define the time threshold (1 hour in milliseconds)
+				  const oneHourInMs = 60 * 60 * 1000;
+				  
+				  if (signInTimeDifference <= oneHourInMs) {
+				  signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+        .then((userCredential) => {
+            localStorage.setItem('userEmail', signInEmail);
+          
+            const user = userCredential.user;
+			window.location.href = '/';
+
+			return true;
+          
+
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode + errorMessage);
+			alert("Invalid login credentials")
+			return false;
+        })
+
+        
+				  
+				  }else{
+						console.log("Not currently signed in")
+				  }
+              
+            }
+            else {
+              console.log("There is no logged in user");
+              return;
+            }
+        })
+    }
+
+    const userSignOut = async() => {
+        await signOut(auth);
+    }
+
+    checkAuthState();
+
+    signUpButton.addEventListener('click', userSignUp);
+    signInButton.addEventListener('click', userSignIn);
+    signOutButton.addEventListener('click', userSignOut);
+  </script>
+
+   
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+  <!-- Include the Firebase JavaScript SDK -->
+
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js"></script>
+  <script src="firebase.js"  ></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

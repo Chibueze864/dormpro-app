@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tourist - Travel Agency HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+   <link href="https://demo.dashboardpack.com/architectui-html-free/main.css" rel="stylesheet">
+  
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+   
+
+
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  
+  <script src="customNavbar.js" type="text/javascript" defer></script>
+  <script src="customFooter.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+
+    <!-- Navbar Start -->
+    <navbar-component></navbar-component>
+      
+  
+
+    <!-- Navbar End -->
+  <!-- <div></div> -->
+ 
+   <div class="container-xxl  pb-5 wow fadeInUp" data-wow-delay="0.1s" >
+    <div class="row">
+     
+      <div class="col-xl-3 col-sm-6 mb-3" id="infoPanel">
+        <div class="card text-white bg-success o-hidden h-100" >
+          <div class="card-body">
+            
+            <div class="mr-5">Hostel Request Pending</div>
+          </div>
+          <a class="card-footer text-white clearfix small z-1" href="#">
+            <span class="float-left">View Details</span>
+            <span class="float-right">
+              <i class="fa fa-angle-right"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+     
+		<div style="margin-top: 8vh"></div>
+	          <div class="table-responsive mt-8" id="table-container">
+                                        <table class="align-middle   table table-borderless table-striped table-hover" >
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center">#</th>
+                                                <th>Name</th>
+                                                <th class="text-center">City</th>
+                                                <th class="text-center">Status</th>
+                                                <th class="text-center">Actions</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center text-muted">#345</td>
+                                                <td>
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-3">
+                                                                <div class="widget-content-left">
+                                                                    <img width="40" class="rounded-circle" src="img/destination-1.jpg" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="widget-content-left flex2">
+                                                                <div class="widget-heading">John Doe</div>
+                                                                <div class="widget-subheading opacity-7">Web Developer</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">Madrid</td>
+                                                <td class="text-center">
+                                                    <div class="badge badge-warning">Pending</div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center text-muted">#347</td>
+                                                <td>
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-3">
+                                                                <div class="widget-content-left">
+                                                                    <img width="40" class="rounded-circle" src="img/destination-1.jpg" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="widget-content-left flex2">
+                                                                <div class="widget-heading">Ruben Tillman</div>
+                                                                <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">Berlin</td>
+                                                <td class="text-center">
+                                                    <div class="badge badge-success">Completed</div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Details</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center text-muted">#321</td>
+                                                <td>
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-3">
+                                                                <div class="widget-content-left">
+                                                                    <img width="40" class="rounded-circle" src="img/destination-1.jpg" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="widget-content-left flex2">
+                                                                <div class="widget-heading">Elliot Huber</div>
+                                                                <div class="widget-subheading opacity-7">Lorem ipsum dolor sic</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">London</td>
+                                                <td class="text-center">
+                                                    <div class="badge badge-danger">In Progress</div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button type="button" id="PopoverCustomT-3" class="btn btn-primary btn-sm">Details</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center text-muted">#55</td>
+                                                <td>
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-3">
+                                                                <div class="widget-content-left">
+                                                                    <img width="40" class="rounded-circle" src="img/destination-1.jpg" alt=""></div>
+                                                            </div>
+                                                            <div class="widget-content-left flex2">
+                                                                <div class="widget-heading">Vinnie Wagstaff</div>
+                                                                <div class="widget-subheading opacity-7">UI Designer</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">Amsterdam</td>
+                                                <td class="text-center">
+                                                    <div class="badge badge-info">On Hold</div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button type="button" id="PopoverCustomT-4" class="btn btn-primary btn-sm">Details</button>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+    </div>
+    </div></div>
+
+
+
+  <div class="card-body">
+    <div class="table-responsive">
+      
+    </div>
+  </div>
+
+  
+    <!-- Footer Start -->
+    <footer-component></footer-component>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+   
+
+    <script type="module">
+      //Update the below URL with the appropriate version if necessary.
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
+      import {
+        onAuthStateChanged,
+        getAuth,
+      } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
+
+      import {
+      getFirestore,
+        setDoc,
+        doc,
+        addDoc,
+		getDocs,
+		query,
+		collection,
+		where,
+		orderBy,
+		updateDoc
+      } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
+
+      // INSERT YOUR FIREBASE CONFIG OBJECT HERE
+       const firebaseConfig = {
+
+      apiKey: "AIzaSyAnAt57T3pVCU-Rw1GRw4tivhvBcC_NmzM",
+
+      authDomain: "dormpro-3f0e3.firebaseapp.com",
+
+      databaseURL: "https://dormpro-3f0e3-default-rtdb.firebaseio.com",
+
+      projectId: "dormpro-3f0e3",
+
+      storageBucket: "dormpro-3f0e3.appspot.com",
+
+      messagingSenderId: "688445848812",
+
+      appId: "1:688445848812:web:9fba956b87f59bf756f9c9",
+
+      measurementId: "G-119MDWZXMR"
+
+    };
+
+
+      const bookButton = document.querySelector("#bookButton");
+      const emailParagraph = document.querySelector("#email-paragraph");
+      const nameParagraph = document.querySelector("#username-paragraph");
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+      
+const flattenObject = (obj, parentKey = '') => Object.keys(obj).reduce((acc, key) => typeof obj[key] === 'object' && !Array.isArray(obj[key]) && obj[key] !== null ? {...acc, ...flattenObject(obj[key], parentKey ? `${parentKey}.${key}` : key)} : {...acc, ...(parentKey ? {[`${parentKey}.${key}`]: obj[key]} : {[key]: obj[key]})}, {});
+const hostelCollectionRef = collection(db, "hostel_reservation");
+const ticketCollectionRef = collection(db, "ticket");
+
+		 		 let reservations = await fetchReservationByEmails(hostelCollectionRef);
+		 		 let tickets = await fetchReservationByEmails(ticketCollectionRef);
+		 		 let yourReservation = await fetchReservationByEmail(hostelCollectionRef);
+				let  yourReservationApproval = yourReservation[0]?._document.data?.value?.mapValue?.fields?.approved.stringValue;
+	let code = yourReservation[0]?._document.data?.value?.mapValue?.fields?.code.stringValue
+
+
+
+async function roomsTaken() {
+		let keys = []
+const hostelCollectionRef = collection(db, "hostel_reservation");
+
+    try {
+        const querySnapshot = await getDocs(hostelCollectionRef);
+
+        querySnapshot.forEach((doc) => {
+			let hostel = doc.data().hostel;
+			let room = doc.data().room;
+			let approved = doc.data().approved;
+			let invite = doc.data().invite;
+			let room_capacity = doc.data().room_capacity;
+			
+			let roomInfo = {
+				hostel,
+				room,
+				approved,
+				invite
+			}
+            keys.push(roomInfo);
+        });
+		return keys;
+    } catch (error) {
+        console.error("Error getting documents: ", error);
+    }
+
+    console.log("Keys outside fetchData:", keys);
+}
+
+
+async function getTotalPeopleInRoom( room, hostel) {
+	try{
+		let rooms = await roomsTaken();
+
+  let totalInRoom =  rooms.reduce((count, roomData) => {
+    // Include rooms with matching room and hostel, regardless of no_members value
+    return count + (roomData.room === room && roomData.approved == "yes" && roomData.hostel === hostel ? 1 : 0);
+  }, 0);
+  return totalInRoom;
+	}catch{
+	
+		console.log("Error fetching people in room")
+	}
+	
+}
+
+const getUserIdsAndFormatEmails = (objects) => {
+  return objects.map(object => object.user_id.replace(/-dot-/g, '.')) 
+ };
+		
+document.body.addEventListener("click", async function (e) {
+    if (e.target &&
+        e.target.classList.contains("approveButton")) {
+        // handle event here
+		
+		const button = e.target;
+        const tr = button.closest('tr');
+		
+
+        // Retrieve props from the table row (tr)
+        const userId = tr.querySelector('td:nth-child(4)').textContent;
+        const room = tr.querySelector('td:nth-child(3)').textContent;
+        const hostel = tr.querySelector('td:nth-child(2)').textContent.replace(/\s+/g, '-').toLowerCase();
+        const invite = tr.querySelector('td:nth-child(5)').textContent;
+		// Generate random number
+let randomNumber = invite === "no" ? "" : Math.floor(Math.random() * 1000) + 1;		
+		let noRoomMembers = await getTotalPeopleInRoom( room, hostel)
+		console.log(invite)
+		let new_no_members = parseInt(noRoomMembers) + 1
+		
+		let roomMates = await fetchReservationByHostel(hostel, room)
+		console.log(roomMates)
+		console.log(new_no_members)
+		let approved = ""
+        // Create approvedData object
+        const approvedData = {
+            code: `${randomNumber}`,
+            approved: "yes",
+			no_members: `${new_no_members}`,
+        };
+
+        const collection = "hostel_reservation";
+		
+		updateReservation(collection, userId, approvedData, roomMates)
+    }else if(e.target &&
+        e.target.classList.contains("disapproveButton")) {
+        // handle event here
+		
+		const button = e.target;
+        const tr = button.closest('tr'); // Retrieve props from the table row (tr)
+        const room = tr.querySelector('td:nth-child(3)').textContent;
+        const hostel = tr.querySelector('td:nth-child(2)').textContent.replace(/\s+/g, '-').toLowerCase();
+        const invite = tr.querySelector('td:nth-child(5)').textContent;
+
+        // Retrieve props from the table row (tr)
+        const userId = tr.querySelector('td:nth-child(4)').textContent;
+		
+		let approved = ""
+        // Create approvedData object
+        const approvedData = {
+            code: "",
+            approved: "no"
+        };
+				let roomMates = await fetchReservationByHostel(hostel, room)
+
+
+        const collection = "hostel_reservation";
+		
+		updateReservation(collection, userId, approvedData, roomMates)
+    }else if(e.target &&
+        e.target.classList.contains("ticketButton")) {
+				const button = e.target;
+  const tr = button.closest('tr');
+  const userId = tr.querySelector('td:nth-child(2)').textContent;
+
+  const redeemedCell = tr.querySelector('td:nth-child(4)');
+  const checkbox = tr.querySelector('input[type="checkbox"]'); // Assuming there's only one checkbox per row
+
+  // Initial state based on checkbox checked state
+  let isRedeemedBoolean = checkbox.checked;
+
+  // Toggle isRedeemedBoolean on checkbox click (before button listener)
+  checkbox.addEventListener('click', () => {
+    isRedeemedBoolean = !isRedeemedBoolean;
+    checkbox.checked = isRedeemedBoolean; // Update checkbox state
+  });
+  
+let approvedData = {
+	redeemed : isRedeemedBoolean
+}
+console.log(userId);
+        const collection = "ticket";
+
+		
+		updateTicket(collection, userId, approvedData)
+    }
+	
+});
+
+
+
+
+
+      // Function to get user display name by email stored in local storage
+     onAuthStateChanged(auth, (user) => {
+		 console.log(auth?.currentUser?.email)
+
+	
+		 let email = auth?.currentUser?.email;
+		 if(email == "admin@nileuniversity.edu.ng"){
+		 
+		 console.log(reservations)
+		 		 const infoPanel = document.getElementById("infoPanel");
+infoPanel.innerHTML = "";
+
+									console.log(reservations)
+
+// Select the table header row
+const tableHeaderRow = document.querySelector('thead tr');
+
+// Update the innerHTML of th elements with new column names
+tableHeaderRow.innerHTML = `
+    <th>Email</th>
+    <th class="text-center">Hostel</th>
+    <th class="text-center">Room</th>
+    <th class="text-center">Capacity</th>
+    <th class="text-center">Meal</th>
+    <th class="text-center">Status</th>
+    <th class="text-center">Approve</th>
+    <th class="text-center">Disapprove</th>
+	
+`;
+
+const tableBody = document.querySelector('tbody');
+tableBody.innerHTML = '';
+
+
+for (const obj of reservations) {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td>${obj.user_id.replace(/-dot-/g, ".")}</td>
+    <td class="text-center">${obj.hostel.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}</td>
+    <td class="text-center">${obj.room}</td>
+    <td class="text-center" style="display: none;">${obj.id}</td>
+    <td class="text-center" style="display: none;">${obj.invite}</td>
+    <td class="text-center">${obj.room_capacity}</td>
+    <td class="text-center">${obj.meal_plan ? 'Yes' : 'No'}</td>
+    <td class="text-center">${obj.approved.charAt(0).toUpperCase() + obj.approved.slice(1) }</td>
+	 <td class="text-center">
+    ${obj.approved === 'yes' ?
+        '<span class="text-success">Approved</span>' :
+        (obj.approved === 'no' ?
+            '<span class="text-danger">Disapproved</span>' :
+            `<button type="button" id="PopoverCustomT" class="btn btn-primary btn-sm approveButton">Approve</button>`)}
+</td>
+	
+    <td class="text-center">
+        ${obj.approved !== 'waiting' ? 
+            '-' :
+            `<button type="button" id="PopoverCustomT" class="btn btn-danger btn-sm disapproveButton">Disapprove</button>`}
+    </td>
+	
+  `;
+  tableBody.appendChild(tr);
+}
+				
+				
+				
+		 }else if(email == "refectory@nileuniversity.edu.ng" ){
+		 		 const infoPanel = document.getElementById("infoPanel");
+		infoPanel.innerHTML = "";
+		 // Select the table header row
+const tableHeaderRow = document.querySelector('thead tr');
+
+// Update the innerHTML of th elements with new column names
+tableHeaderRow.innerHTML = `
+    <th>Email</th>
+    <th class="text-center">Has Eaten?</th>
+
+	
+`;
+
+const tableBody = document.querySelector('tbody');
+tableBody.innerHTML = '';
+
+
+for (const obj of tickets) {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td>${obj.email}</td>
+    <td style="display:none;">${obj.id}</td>
+<td class="text-center">
+  <input class="ticketButton" type="checkbox" ${obj.redeemed == true ? "checked" : ""} />
+</td>
+    <td class="text-center" style="display:none;" >${obj.redeemed}</td>
+  
+	
+  `;
+  tableBody.appendChild(tr);
+}
+
+		 
+		 }else{
+		 
+		 
+		 function alternateBadgeClass(index) {
+        return index % 2 === 0 ? 'badge-success' : 'badge-failure';
+    }
+	
+			    // Define the days of the week
+    const daysOfWeek = ['Monday','', 'Tuesday','', 'Wednesday','', 'Thursday','', 'Friday'];
+
+    // Define random food names
+    const foodNames = ['Pizza', 'Burger', 'Salad', 'Pasta', 'Sushi'];
+
+    // Define meal types
+    const mealTypes = ['Breakfast', 'Dinner'];
+
+    // Initialize HTML template string
+    let tableHTML = `
+        <table class="align-middle table table-borderless table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Food</th>
+                    <th >Meal-Type</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    // Generate table rows
+    for (let i = 0; i < daysOfWeek.length; i++) {
+        // Alternate meal type between breakfast and dinner
+        const mealType = mealTypes[i % 2];
+
+        // Generate random food name
+        const foodName = foodNames[Math.floor(Math.random() * foodNames.length)];
+
+        // Add table row to HTML template string
+        tableHTML += `
+            <tr>
+                <td>${daysOfWeek[i]}</td>
+                <td>${foodName}</td>
+                <td >${mealType}</td>
+            </tr>
+        `;
+    }
+
+    // Close table body and table
+    tableHTML += `
+            </tbody>
+        </table>
+    `;
+
+    // Append the generated table HTML to the table container
+    document.getElementById('table-container').innerHTML = tableHTML;
+		 const infoPanel = document.getElementById("infoPanel");
+
+const requestStatus = yourReservationApproval === "yes" ? "Request Approved" : yourReservationApproval === "waiting" ? "Hostel Request Pending" : "Request Disallowed";
+
+const bgColorClass = yourReservationApproval === "yes" ? "bg-success" : 
+                    yourReservationApproval === "waiting" ? "bg-warning" : 
+                    yourReservationApproval === "no" ? "bg-danger" : "";
+
+console.log(code)
+const cardHtml = `
+  <div class="card text-white ${bgColorClass} o-hidden h-100">
+    <div class="card-body">
+      <div class="mr-5">${requestStatus}</div>
+    </div>
+    <span class="card-footer text-white clearfix small z-1" >
+      <span class="float-left"> ${code ?  code : 'No Code'}</span> &nbsp;
+      <span class="float-right">
+        <i class="fa fa-clipboard"></i>
+      </span>
+    </span>
+  </div>
+`;
+yourReservation.length > 0 ? infoPanel.innerHTML = cardHtml: infoPanel.innerHTML = "";
+
+const hostelCollectionRef = collection(db, "hostel_reservation");
+
+    
+
+
+	
+		 }
+		 
+
+});
+	
+	   async function fetchReservationByEmail(email) {
+		let keys = []
+
+    try {
+        const querySnapshot = await getDocs(hostelCollectionRef);
+
+        querySnapshot.forEach((doc) => {
+            keys.push(doc);
+        });
+		return keys.filter(key => key.id.includes(auth?.currentUser?.email));
+    } catch (error) {
+        console.error("Error getting documents: ", error);
+    }
+
+    console.log("Keys outside fetchData:", keys);
+}
+
+async function fetchReservationByHostel(hostel, room) {
+  let filteredDocs = [];
+  let ids = [];
+	let keys = [];
+  try {
+    const querySnapshot = await getDocs(hostelCollectionRef);
+
+    querySnapshot.forEach((doc, index) => {
+      const data = doc.data();
+      keys.push(data);
+
+      if (data.hostel === hostel && data.room === room) {
+        filteredDocs.push(data);
+        ids.push(doc.id); // Push document ID instead of index
+      }
+    });
+
+    return ids; // Return only the document IDs
+  } catch (error) {
+    console.error("Error getting documents: ", error);
+  }
+
+  console.log("Keys outside fetchData:", keys); // This line can be removed
+}
+	
+	   async function fetchReservationByEmails(hostelCollectionRef) {
+		let data = []
+let keys = []
+let values = []
+    try {
+        const querySnapshot = await getDocs(hostelCollectionRef);
+
+        querySnapshot.forEach((doc) => {
+		  let value = doc.data()
+		  
+		  value.id = doc.id
+            data.push(value);
+        });
+		
+		
+	
+	
+		return data;
+    } catch (error) {
+        console.error("Error getting documents: ", error);
+    }
+
+    console.log("Keys outside fetchData:", keys);
+}
+
+async function fetchTickets(ticketCollectionRef) {
+		let data = []
+let keys = []
+let values = []
+    try {
+        const querySnapshot = await getDocs(hostelCollectionRef);
+
+        querySnapshot.forEach((doc) => {
+		  let value = doc.data()
+		  
+		  value.id = doc.id
+            data.push(value);
+        });
+		
+		
+	
+	
+		return data;
+    } catch (error) {
+        console.error("Error getting documents: ", error);
+    }
+
+    console.log("Keys outside fetchData:", keys);
+}
+
+async function updateReservation(collectionName, docId, newData, roomMates) {
+
+  try {
+    // Reference the document using its ID
+	for (let i = 0; i < roomMates.length; i++){
+		if(roomMates[i].includes(docId)){
+			
+		
+		const docRef = doc(db, collectionName, roomMates[i]);
+
+		// Update the document with new data
+		await updateDoc(docRef, newData);
+		
+		}else{
+		const approvedData = {
+            
+			no_members: `${newData.no_members}`,
+        };
+		
+		const docRef = doc(db, collectionName, roomMates[i]);
+
+		// Update the document with new data
+		await updateDoc(docRef, approvedData);
+		
+		}
+		
+	}
+    console.log('Document updated successfully. Refresh to see changes');
+	let message = newData.approved == "yes"?  "Request Approved": "Request Disapproved"
+    alert(message);
+  } catch (error) {
+    console.error('Error updating document:', error);
+  }
+}
+
+async function updateTicket(collectionName, docId, newData) {
+
+  try {
+  
+			
+		
+		const docRef = doc(db, collectionName, docId );
+
+		// Update the document with new data
+		await updateDoc(docRef, newData);
+		
+		
+	}
+    
+  catch (error) {
+    console.error('Error updating document:', error);
+  }
+}
+
+const checkAuthState = async() => {
+        onAuthStateChanged(auth, user => {
+            if(user) {
+					console.log(user.email);
+        
+            }
+            else {
+              			window.location.href = '/register';
+
+            }
+        })
+    }
+ 
+     checkAuthState();
+
+
+
+	  
+
+    </script>
+	 <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
